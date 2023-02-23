@@ -6,7 +6,7 @@
 /*   By: yachen <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 18:00:17 by yachen            #+#    #+#             */
-/*   Updated: 2023/02/23 16:09:08 by yachen           ###   ########.fr       */
+/*   Updated: 2023/02/23 17:24:30 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	ft_iterative_power(int nb, int power)
 /*
 int	main(void)
 {
-	printf("%d", ft_iterative_power(3, 0));
+	printf("%d\n", ft_iterative_power(, 0));
+	printf("%d\n", ft_iterative_power(0, -1));
 	return (0);
 }*/

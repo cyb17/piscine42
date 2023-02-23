@@ -6,16 +6,17 @@
 /*   By: yachen <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 11:35:32 by yachen            #+#    #+#             */
-/*   Updated: 2023/02/23 12:04:53 by yachen           ###   ########.fr       */
+/*   Updated: 2023/02/23 18:46:33 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 int	ft_is_prime(int nb)
 {
 	int	i;
 
 	i = 2;
-	if (nb < 2)
+	if (nb < 2 || nb > 2147483647)
 		return (0);
 	while (nb % i != 0)
 		i++;
@@ -23,4 +24,10 @@ int	ft_is_prime(int nb)
 		return (0);
 	else
 		return (1);
+}
+
+int	main(void)
+{
+	printf("%d", ft_is_prime(2147483647));
+	return (0);
 }
