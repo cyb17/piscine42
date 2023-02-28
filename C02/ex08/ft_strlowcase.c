@@ -1,39 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yachen <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 12:05:46 by yachen            #+#    #+#             */
-/*   Updated: 2023/02/26 15:26:06 by yachen           ###   ########.fr       */
+/*   Created: 2023/02/13 11:44:04 by yachen            #+#    #+#             */
+/*   Updated: 2023/02/13 11:55:18 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_is_prime(int nb)
+#include <stdio.h>
+
+char	*ft_strlowcase(char *str)
 {
 	int	i;
 
-	i = 2;
-	if (nb < 2)
-		return (0);
-	while (i <= (nb / i))
+	i = 0;
+	while (str[i] != '\0')
 	{
-		if ((nb % i) == 0)
-			return (0);
-		i++;
+		if (str[i] >= 65 && str[i] <= 90)
+		{
+			str[i] += ' ';
+			i++;
+		}
+		else
+			i++;
 	}
-	return (1);
+	return (str);
 }
-
-int	ft_find_next_prime(int nb)
+/*int	main(void)
 {
-	if (ft_is_prime(nb) == 1)
-		return (nb);
-	else
-	{
-		while (ft_is_prime(nb) != 1)
-			nb++;
-	}
-	return (nb);
-}
+	char	str[] = "JE SUIS yABING chen";
+	
+	printf("chaine originale : %s\n", str);
+	printf("chaine modifie : %s\n", ft_strlowcase(str));
+
+	return (0);
+}*/

@@ -6,7 +6,7 @@
 /*   By: yachen <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:21:54 by yachen            #+#    #+#             */
-/*   Updated: 2023/02/21 19:13:39 by yachen           ###   ########.fr       */
+/*   Updated: 2023/02/26 16:40:18 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ int	check_base(char *str)
 
 int	ft_atoi_base(char *str, char *base)
 {
-	int	i;
-	int	sign;
-	int	nbr;
+	int			i;
+	int			sign;
+	long int	nbr;
 
 	i = 0;
 	sign = 0;

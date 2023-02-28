@@ -1,39 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yachen <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 12:05:46 by yachen            #+#    #+#             */
-/*   Updated: 2023/02/26 15:26:06 by yachen           ###   ########.fr       */
+/*   Created: 2023/02/24 12:20:26 by yachen            #+#    #+#             */
+/*   Updated: 2023/02/26 17:10:40 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_is_prime(int nb)
+#include <stdio.h>
+#include <stdlib.h>
+
+int	ft_ultimate_range(int **range, int min, int max)
 {
 	int	i;
+	int	*tab;
 
-	i = 2;
-	if (nb < 2)
-		return (0);
-	while (i <= (nb / i))
+	i = 0;
+	tab = (int *)malloc(sizeof (*tab) * (max - min));
+	if (!tab)
+		return (-1);
+	if (min >= max)
 	{
-		if ((nb % i) == 0)
-			return (0);
+		tab = NULL;
+		return (0);
+	}
+	while (i < max - min)
+	{
+		tab[i] = min + i;
 		i++;
 	}
-	return (1);
+	*range = tab;
+	return (i);
 }
-
-int	ft_find_next_prime(int nb)
+/*
+int	main(void)
 {
-	if (ft_is_prime(nb) == 1)
-		return (nb);
-	else
-	{
-		while (ft_is_prime(nb) != 1)
-			nb++;
-	}
-	return (nb);
-}
+	int	*tab;
+	printf("%d", ft_ultimate_range(&tab, 50, 40));
+	return (0);
+}*/

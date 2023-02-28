@@ -1,39 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yachen <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 12:05:46 by yachen            #+#    #+#             */
-/*   Updated: 2023/02/26 15:26:06 by yachen           ###   ########.fr       */
+/*   Created: 2023/02/26 17:11:25 by yachen            #+#    #+#             */
+/*   Updated: 2023/02/28 17:42:28 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_is_prime(int nb)
+int	ft_strlen(char *str)
 {
 	int	i;
 
-	i = 2;
-	if (nb < 2)
-		return (0);
-	while (i <= (nb / i))
-	{
-		if ((nb % i) == 0)
-			return (0);
+	i = 0;
+	while (str[i])
 		i++;
-	}
-	return (1);
+	return (i);
 }
 
-int	ft_find_next_prime(int nb)
+
+char	*ft_strjoin(int size, char **strs, char *sep)
 {
-	if (ft_is_prime(nb) == 1)
-		return (nb);
-	else
+	char	*str;
+	int	i;
+
+	i = 0;
+	str = (char  *)malloc(sizeof (*str)) * (size + (size - 1) * ft_strlen(sep));
+	if (!str)
+		return (0);
+	if (size == 0)
 	{
-		while (ft_is_prime(nb) != 1)
-			nb++;
+		str = malloc(sizeof(char));
+		str = 0;
+		return (str);
 	}
-	return (nb);
+	
+}
+
+int	main(void)
+{
+	char	*str[6] = {"abc", "def", "ghi", "jk"};
+	char	sep[] = ",";
+	ft_strjoin()
 }

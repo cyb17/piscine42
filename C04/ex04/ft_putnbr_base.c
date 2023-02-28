@@ -6,7 +6,7 @@
 /*   By: yachen <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 14:14:03 by yachen            #+#    #+#             */
-/*   Updated: 2023/02/22 10:50:16 by yachen           ###   ########.fr       */
+/*   Updated: 2023/02/26 16:26:52 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	check_base(char *base)
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	long	nb;
+	long int	nb;
 
 	nb = nbr;
 	if (check_base(base))
@@ -71,9 +71,9 @@ void	ft_putnbr_base(int nbr, char *base)
 int	main(void)
 {
 	int	nbr;
-	char base[] = "abf";
+	char base[] = "ab cdef";
 
-	nbr = 10;
+	nbr = 5;
 	ft_putnbr_base(nbr, base);
 	return (0);
 }*/

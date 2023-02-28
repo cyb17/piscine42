@@ -1,39 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yachen <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 12:05:46 by yachen            #+#    #+#             */
-/*   Updated: 2023/02/26 15:26:06 by yachen           ###   ########.fr       */
+/*   Created: 2023/02/13 11:28:38 by yachen            #+#    #+#             */
+/*   Updated: 2023/02/13 11:43:24 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_is_prime(int nb)
+#include <stdio.h>
+
+char	*ft_strupcase(char *str)
 {
 	int	i;
 
-	i = 2;
-	if (nb < 2)
-		return (0);
-	while (i <= (nb / i))
+	i = 0;
+	while (str[i] != '\0')
 	{
-		if ((nb % i) == 0)
-			return (0);
-		i++;
+		if (str[i] >= 97 && str[i] <= 122)
+		{
+			str[i] = str[i] - 32;
+			i++;
+		}
+		else
+			i++;
 	}
-	return (1);
+	return (str);
 }
-
-int	ft_find_next_prime(int nb)
+/*int	main(void)
 {
-	if (ft_is_prime(nb) == 1)
-		return (nb);
-	else
-	{
-		while (ft_is_prime(nb) != 1)
-			nb++;
-	}
-	return (nb);
-}
+	char	str1[] = "je suis Yabing CHEN";
+
+	printf("chaine original : %s\n", str1);
+	printf("chaine modifie : %s", ft_strupcase(str1));
+
+	return (0);
+}*/

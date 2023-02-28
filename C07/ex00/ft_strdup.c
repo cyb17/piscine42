@@ -1,39 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yachen <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 17:18:56 by yachen            #+#    #+#             */
-/*   Updated: 2023/02/26 12:43:38 by yachen           ###   ########.fr       */
+/*   Created: 2023/02/23 19:18:27 by yachen            #+#    #+#             */
+/*   Updated: 2023/02/28 16:55:27 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-void	put_str(char *str)
+int	ft_strlen(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i])
-	{
-		write(1, &str[i], 1);
 		i++;
-	}
+	return (i);
 }
 
-int	main(int argc, char *argv[])
+char	*ft_strdup(char *src)
 {
-	int	i;
+	char	*str;
+	int		i;
 
-	i = 1;
-	while (argc > i)
+	i = 0;
+	str = (char *)malloc(sizeof (*str) * (ft_strlen(src) + 1));
+	if (!str)
+		return (0);
+	while (src[i])
 	{
-		put_str(argv[i]);
-		write(1, "\n", 1);
+		str[i] = src[i];
 		i++;
 	}
-	return (0);
+	str[i] = '\0';
+	return (str);
 }
+/*
+int	main(void)
+{
+	char	*str1;
+	char	*str2;
+	char	*str3;
+
+	str1 = "manger";
+	str2 = ft_strdup(str1);
+	free(str2);
+	return (0);
+}*/

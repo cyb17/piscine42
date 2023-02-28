@@ -1,39 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yachen <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 12:05:46 by yachen            #+#    #+#             */
-/*   Updated: 2023/02/26 15:26:06 by yachen           ###   ########.fr       */
+/*   Created: 2023/02/13 10:11:37 by yachen            #+#    #+#             */
+/*   Updated: 2023/02/16 19:28:35 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_is_prime(int nb)
+#include <stdio.h>
+
+int	ft_str_is_printable(char *str)
 {
 	int	i;
 
-	i = 2;
-	if (nb < 2)
-		return (0);
-	while (i <= (nb / i))
+	i = 0;
+	while (str[i])
 	{
-		if ((nb % i) == 0)
+		if ((str[i] < 32) || str[i] > 126)
 			return (0);
 		i++;
 	}
 	return (1);
 }
 
-int	ft_find_next_prime(int nb)
+/*int	main(void)
 {
-	if (ft_is_prime(nb) == 1)
-		return (nb);
-	else
-	{
-		while (ft_is_prime(nb) != 1)
-			nb++;
-	}
-	return (nb);
-}
+	char	chaine_vide[] = "\0";
+	char	chaine_non_affichable[] = "gh\nGH$%45";
+
+	printf("chaine_vide : %d\n", ft_str_is_printable(chaine_vide));
+	printf("chaine_affichable : %d\n", ft_str_is_printable(chaine_non_affichable));
+
+	return (0);
+}*/
