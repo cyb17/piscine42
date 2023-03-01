@@ -1,44 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yachen <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/24 12:20:26 by yachen            #+#    #+#             */
-/*   Updated: 2023/03/01 17:34:15 by yachen           ###   ########.fr       */
+/*   Created: 2023/03/01 12:34:24 by yachen            #+#    #+#             */
+/*   Updated: 2023/03/01 17:32:42 by yachen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
-
-int	ft_ultimate_range(int **range, int min, int max)
+int	ft_strcmp(char *dest, char *src)
 {
 	int	i;
-	int	*tab;
 
 	i = 0;
-	*range = tab;
-	if (min >= max)
+	while (dest[i] == src[i] && src[i])
+		i++;
+	return (dest[i] - src[i]);
+
+}
+
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (*str)
+		i++;
+	return (i)
+}
+
+char	**ft_split(char *str, char *charset)
+{
+	int	i;
+	int	charset_len;
+	char	*tmp;
+
+	i = 0;
+	charset_len = ft_strlen(charset);
+	while (str[i])
 	{
-		tab = NULL;
-		return (0);
-	}
-	tab = (int *)malloc(sizeof (*tab) * (max - min));
-	if (!tab)
-		return (-1);
-	while (i < max - min)
-	{
-		tab[i] = min + i;
+		j = 0;
+		if(str[i] == charset[j])
+		{
+			if (ft_strcmp(&str[i], charset) == 0);
+				tmp = str[charset_len + 1];
+		}
 		i++;
 	}
-	return (i);
 }
-/*
-int	main(void)
-{
-	int	*tab;
-	printf("%d", ft_ultimate_range(&tab, 30, 40));
-	return (0);
-}*/
+
